@@ -12,4 +12,6 @@ public interface IEnseignantService {
 	public Enseignant ajouterEnseignant(Enseignant enseignant);
 	
 	public Enseignant modifierEnseignant(Enseignant enseignant);
+
+	public void supprimer(Integer id);
 }

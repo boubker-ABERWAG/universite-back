@@ -1,10 +1,10 @@
-package fr.aberwag.universite.etudiant.service;
+package fr.aberwag.universite.etudiant.controller;
 
 import java.util.List;
 
 import fr.aberwag.universite.etudiant.domain.Etudiant;
 
-public interface IEtudiantService {
+public interface IEtudiantController {
 	public List<Etudiant> findAll();
 	
 	public Etudiant findOne(Integer id);

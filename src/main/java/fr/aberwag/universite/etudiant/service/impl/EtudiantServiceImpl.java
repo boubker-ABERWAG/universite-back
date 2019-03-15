@@ -1,6 +1,5 @@
 package fr.aberwag.universite.etudiant.service.impl;
 
-import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +10,10 @@ import fr.aberwag.universite.etudiant.repository.IEtudiantRepository;
 import fr.aberwag.universite.etudiant.service.IEtudiantService;
 @Service
 public class EtudiantServiceImpl implements
- IEtudiantService{
+IEtudiantService{
 	@Autowired
 	IEtudiantRepository etudiantRepository;
-	
+
 	@Override
 	public List<Etudiant> findAll() {
 		List<Etudiant> liste = etudiantRepository.findAll();
@@ -33,6 +32,12 @@ public class EtudiantServiceImpl implements
 		if(e.getPhoto() == null ) {
 			e.setPhoto("http://www.fapics.org/offres/image_inline_src/762/72f8f2fc0c3ca1d9da0013b480c9ddf2.jpg");
 		}
+		return e;
+	}
+
+	@Override
+	public Etudiant save(Etudiant etudiant) {
+		Etudiant e = etudiantRepository.save(etudiant);
 		return e;
 	}
 

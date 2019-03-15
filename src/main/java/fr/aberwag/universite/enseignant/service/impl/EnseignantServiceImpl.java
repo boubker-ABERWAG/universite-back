@@ -23,7 +23,7 @@ public class EnseignantServiceImpl implements IEnseignantService {
 		// vérifier l'image pour chaque enseignant
 		// SI l'enseignant ne possède pas d'image on lui donne une image par default
 		// http://bibliotheque.sciencespo-lyon.fr/wp-content/uploads/2018/10/des-enseignants-de-lecture_318-28655.jpg
-		
+
 		for(int i = 0 ; i < liste.size(); i++) {
 			Enseignant e = liste.get(i);
 			log.info("Image de l'enseignant : {}", e.getPhoto() );
@@ -31,7 +31,7 @@ public class EnseignantServiceImpl implements IEnseignantService {
 				liste.get(i).setPhoto("http://bibliotheque.sciencespo-lyon.fr/wp-content/uploads/2018/10/des-enseignants-de-lecture_318-28655.jpg");
 			}
 		}
-		
+
 		return liste;
 	}
 
@@ -55,11 +55,16 @@ public class EnseignantServiceImpl implements IEnseignantService {
 		Enseignant e = enseignantRepository.save(enseignant);
 		return e;
 	}
-	
-	
-	
-	
-	
-	
-	
+
+	@Override
+	public void supprimer(Integer id) {
+		enseignantRepository.deleteById(id);
+	}
+
+
+
+
+
+
+
 }
