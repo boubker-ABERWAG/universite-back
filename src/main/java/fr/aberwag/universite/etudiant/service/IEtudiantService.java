@@ -10,4 +10,7 @@ public interface IEtudiantService {
 	public Etudiant findOne(Integer id);
 	
 	public Etudiant save(Etudiant etudiant);
+	public Etudiant update(Etudiant etudiant);
+	
+	public void supprimer(Integer id);
 }

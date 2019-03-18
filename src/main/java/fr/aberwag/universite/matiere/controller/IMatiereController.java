@@ -10,4 +10,5 @@ public interface IMatiereController {
 	public Matiere findOne(Integer id);
 	
 	public Matiere save(Matiere matiere);
+	
 }

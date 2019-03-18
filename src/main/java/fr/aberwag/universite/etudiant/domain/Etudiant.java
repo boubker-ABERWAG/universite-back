@@ -14,36 +14,41 @@ import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import fr.aberwag.universite.note.domain.Note;
 
 @Entity
 @Table(name="T_ETUDIANT")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Etudiant implements Serializable {
-	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ID")
 	private Integer id ;
-	
+
 	@Column(name="NUMERO_ETUDIANT")
 	private Integer numero;
-	
+
 	@Column(name="NOM")
 	private String nom;
-	
+
 	@Column(name="PRENOM")
 	private String prenom ;
-	
+
 	@Column(name="DATE_NAISSANCE")
-	@DateTimeFormat(pattern="yyy-MM-dd")
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date dateNaissance;
-	
+
 	@Column(name="SEXE")
 	private Character sexe;
-	
+
 	@Column(name="PHOTO")
 	private String photo;
-
+	
+	@JsonIgnore
 	@OneToMany(mappedBy="etudiant")
 	private List<Note> notes;
 
@@ -110,8 +115,8 @@ public class Etudiant implements Serializable {
 	public void setNotes(List<Note> notes) {
 		this.notes = notes;
 	}
-	
-	
-	
+
+
+
 
 }

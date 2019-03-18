@@ -13,11 +13,15 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import fr.aberwag.universite.enseignant.domain.Enseignant;
 import fr.aberwag.universite.note.domain.Note;
 
 @Entity
 @Table(name="T_MATIERE")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Matiere implements Serializable{
 
 	@Id
@@ -39,6 +43,7 @@ public class Matiere implements Serializable{
 	private Enseignant enseignant;
 	
 	@OneToMany(mappedBy="matiere")
+	@JsonIgnore
 	private List<Note> notes;
 
 	public Integer getId() {

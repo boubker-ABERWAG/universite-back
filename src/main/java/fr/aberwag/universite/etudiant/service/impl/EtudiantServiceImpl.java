@@ -40,5 +40,16 @@ IEtudiantService{
 		Etudiant e = etudiantRepository.save(etudiant);
 		return e;
 	}
+	
+	@Override
+	public Etudiant update(Etudiant etudiant) {
+		Etudiant e = etudiantRepository.save(etudiant);
+		return e;
+	}
+
+	@Override
+	public void supprimer(Integer id) {
+		etudiantRepository.deleteById(id);
+	}
 
 }
