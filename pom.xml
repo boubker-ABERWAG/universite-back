@@ -12,7 +12,7 @@
 	<groupId>fr.aberwag.universite</groupId>
 	<artifactId>universite-back-boubker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>universite-back</name>
+	<name>universite-back-boubker</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
