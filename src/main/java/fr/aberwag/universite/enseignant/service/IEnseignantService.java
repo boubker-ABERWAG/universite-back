@@ -14,4 +14,6 @@ public interface IEnseignantService {
 	public Enseignant modifierEnseignant(Enseignant enseignant);
 
 	public void supprimer(Integer id);
+	
+	public List<Enseignant> getEnseignants(String chaine);
 }

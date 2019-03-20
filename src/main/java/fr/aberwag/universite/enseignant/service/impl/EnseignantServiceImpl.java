@@ -61,6 +61,13 @@ public class EnseignantServiceImpl implements IEnseignantService {
 		enseignantRepository.deleteById(id);
 	}
 
+	@Override
+	public List<Enseignant> getEnseignants(String s) {
+		List<Enseignant> liste = 
+				enseignantRepository.findEnseignantByNomContains(s);
+		return liste;
+	}
+
 
 
 

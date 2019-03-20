@@ -14,6 +14,8 @@ public interface IEnseignantController {
 	public void delete(Integer id);
 	
 	public Enseignant update(Enseignant enseignant, Integer id);
+
+	public List<Enseignant> chercherEnseignants(String ch);
 }
 
 

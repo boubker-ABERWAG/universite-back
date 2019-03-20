@@ -1,5 +1,7 @@
 package fr.aberwag.universite.enseignant.repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -7,4 +9,7 @@ import fr.aberwag.universite.enseignant.domain.Enseignant;
 
 @Repository
 public interface IEnseignantRepository 
-	extends JpaRepository<Enseignant, Integer> {}
+	extends JpaRepository<Enseignant, Integer> {
+	
+	List<Enseignant> findEnseignantByNomContains(String chaine);
+}

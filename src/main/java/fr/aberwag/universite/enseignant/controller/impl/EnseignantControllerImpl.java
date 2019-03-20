@@ -5,6 +5,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +19,7 @@ import fr.aberwag.universite.enseignant.domain.Enseignant;
 import fr.aberwag.universite.enseignant.service.impl.EnseignantServiceImpl;
 
 @RestController
+@CrossOrigin
 public class EnseignantControllerImpl
 implements IEnseignantController
 {
@@ -68,6 +70,13 @@ implements IEnseignantController
 		Enseignant e = 
 				enseignantService.modifierEnseignant(enseignant);
 		return e;
+	}
+
+	@Override
+	@GetMapping("/enseignants/search/{ch}")
+	public List<Enseignant> chercherEnseignants(@PathVariable String ch) {
+		List<Enseignant> liste = enseignantService.getEnseignants(ch);
+		return liste;
 	}
 	
 	
